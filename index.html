@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyadharshini's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .chrome-window {
+            max-width: 1200px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .chrome-top-bar {
+            background-color: #f1f3f4;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .chrome-buttons span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .chrome-buttons span:nth-child(1) { background-color: #ff5f56; }
+        .chrome-buttons span:nth-child(2) { background-color: #ffbd2e; }
+        .chrome-buttons span:nth-child(3) { background-color: #27c93f; }
+        .chrome-address-bar {
+            flex-grow: 1;
+            margin-left: 20px;
+            padding: 5px 10px;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .navigation {
+            background-color: #333;
+            padding: 10px;
+        }
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+        .section {
+            padding: 20px;
+            display: none;
+        }
+        #home { display: block; }
+        #experience { background-color: #e6f2ff; }
+        #projects { background-color: #fff0e6; }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        .about-me {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .resume {
+            text-align: center;
+        }
+        .resume h1 {
+            margin-bottom: 20px;
+        }
+        .resume a {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+            text-decoration: none;
+        }
+        .resume a:hover {
+            text-decoration: underline;
+        }
+        .resume p {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #dfbd9f; /* Updated background color */
+    border-radius: 8px;
+        }
+        
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .skill-bar {
+            width: 80%;
+            margin: 10px auto;
+        }
+        .skill-name {
+            float: left;
+            font-weight: bold;
+        }
+        .skill-progress {
+            background-color: #ddd;
+            border-radius: 4px;
+            margin: 5px 0;
+            overflow: hidden;
+        }
+        .skill-progress span {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .experience-item h2 {
+            margin-top: 0;
+        }
+        .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .project-item h2 {
+            margin-top: 0;
+        }
+        .project-gif {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .project-item a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #2196f3;
+            text-decoration: none;
+        }
+        .project-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f2d9e5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        .social-icons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+        }
+        .social-icons a {
+            margin-left: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .social-icons a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="chrome-window">
+        <div class="chrome-top-bar">
+            <div class="chrome-buttons">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="chrome-address-bar">https://www.priyadharshini-portfolio.com</div>
+            <div class="social-icons">
+                <a href="http://www.linkedin.com/in/priyadharshini-kalidass" target="_blank">LinkedIn</a>
+                <a href="https://github.com/priyadharshini114" target="_blank">GitHub</a>
+                <a href="https://medium.com/@priyadharshinikalidassk" target="_blank">Medium</a>
+                <a href="mailto:priyadharshinikalidassk@gmail.com" target="_blank">Email</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <a href="#" class="nav-button" data-section="home">Home</a>
+            <a href="#" class="nav-button" data-section="resume">Resume</a>
+            <a href="#" class="nav-button" data-section="experience">Experience</a>
+            <a href="#" class="nav-button" data-section="projects">Projects</a>
+            <a href="#" class="nav-button" data-section="contact">Contact</a>
+        </div>
+        <div id="home" class="section fade-in">
+            <div class="profile-container">
+                <img src="Profile.jpg" alt="Priyadharshini's Photo" class="profile-photo">
+                <h1>Priyadharshini</h1>
+                <h3>Machine learning Engineer</h3>
+                
+            </div>
+            <div class="about-me">
+                <h2>About Me</h2>
+                <!-- <div class="container">
+                    <h2>About Me</h2> -->
+                    <p><strong>Passionate IT Graduate | Specializing in Data Science | Python Developer | Data Science Enthusiast | Computer Vision | Machine Learning</strong></p>
+                    <p>I am a motivated and career-oriented individual with a passion for technology and data-driven solutions. With over 2.5 years of experience in Python development for ADAS & AD, I specialize in computer vision and machine learning. Skilled in deep learning, image processing, and CNN architectures, I am proficient in OpenCV, PyTorch, Matplotlib, and TensorFlow. I am committed to leveraging my skills for innovation and impactful results, seeking a challenging role to contribute to innovative projects in computer vision and machine learning.</p>
+            
+                    <h3 class="highlight">🌟 Accomplishments</h3>
+                    <ul>
+                        <li><strong>Hackathons:</strong> Actively participated in college hackathons, showcasing problem-solving skills and a passion for innovation.</li>
+                        <li><strong>Projects:</strong> Spearheaded real-time projects using computer vision and machine learning, delivering impactful solutions.</li>
+                        <li><strong>Career Growth:</strong> Successfully transitioned from intern to full-time employee, demonstrating adaptability and dedication to professional growth.</li>
+                    </ul>
+            
+                    <h3 class="highlight">🤝 About Me</h3>
+                    <p>As someone who takes initiative, I thrive in both independent and collaborative environments. Driven by an unwavering pursuit of excellence, I am committed to ensuring project success by consistently going above and beyond. My passion lies in harnessing technology for a positive impact.</p>
+            
+                    <h3 class="highlight">🔍 Free Time Activities</h3>
+                    
+
+                    <p>I dedicate my leisure hours to continuous learning, investing time in acquiring knowledge for future growth. My focus is on honing problem-solving and analytical skills while staying updated on the latest industry developments.</p>
+                    <h4 style="color: #003366; font-style: italic; text-align: center;">Train &gt; Validate &gt; Deploy &gt; Iterate</h4>
+                    <p style="color: #6c757d; font-style: italic; text-align: center;">
+                        "When something is important enough, you do it even if the odds are not in your favor."
+                    </p>
+                    
+
+                </div>
+        </div>
+        <div id="resume" class="section fade-in">
+            <h2>Brief Summary</h2>
+<p>I am an enthusiastic and dedicated professional 
+    in data science and computer vision, consistently 
+    pursuing cutting-edge solutions and advancements. 
+    My drive for innovation keeps me at the leading edge of this evolving field,
+     where I actively contribute to projects that push the boundaries of my knowledge.
+      I am devoted to leveraging my expertise to solve real-world challenges,
+       thereby making significant contributions to technological progress.</p>
+
+<h2>Skills</h2>
+<div style="display: flex;">
+    <div style="flex: 1; padding: 10px;">
+        <h3>Frameworks</h3>
+        <ul>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>Mediapipe</li>
+            <li>Keras</li>
+        </ul>
+
+        <h3>Algorithms</h3>
+        <ul>
+            <li>YOLOv5</li>
+            <li>SlowFast</li>
+            <li>Faster R-CNN</li>
+            <li>SSD (Single Shot MultiBox Detector)</li>
+            <li>Pose Estimation</li>
+            <li>GenAI (Generative AI)</li>
+            <li>VGG</li>
+        </ul>
+
+        <h3>Packages</h3>
+        <ul>
+            <li>NumPy</li>
+            <li>Pandas</li>
+            <li>Matplotlib</li>
+            <li>OpenCV</li>
+            <li>Scikit-learn</li>
+            <li>Seaborn</li>
+        </ul>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <h3>Languages</h3>
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+        </ul>
+
+        <h3>Tools</h3>
+        <ul>
+            <li>MS Excel</li>
+            <li>Tableau</li>
+            <li>MS Office</li>
+        </ul>
+
+        <h3>Skills and Applications</h3>
+        <ul>
+            <li>Image Processing</li>
+            <li>CNN Architectures</li>
+            <li>Data Preprocessing</li>
+            <li>Machine Learning</li>
+            <li>Fine-Tuning</li>
+            <li>Pre-processing and Post-processing</li>
+            <li>Natural Language Processing (NLP)</li>
+            <li>API Development</li>
+            <li>Supervised and Unsupervised Learning</li>
+            <li>LLM (Large Language Models)</li>
+        </ul>
+        
+        <h3>Operating Systems</h3>
+        <ul>
+            <li>Windows</li>
+            <li>Linux</li>
+        </ul>
+        <div style="margin-bottom: 20px;"></div>
+        <div class="centered-content">
+        
+        </ul>
+
+        <div style="margin-top: 20px;">
+            <a href="Priyadharshini_29_12_2001.pdf" download="Resume_Priyadharshini_Kalidass">
+                <button type="button" style="background-color: #a3c2c2; border: none; padding: 10px 20px; cursor: pointer;">
+                    Download Resume
+                </button>
+            </a>
+        </div>
+        <!-- <h3 style="color: blue;">Check out my profiles:</h3>
+<a href="http://www.linkedin.com/in/priyadharshini-kalidass" style="color: #008fb3;" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;"> LinkedIn
+</a><br>
+<a href="https://github.com/priyadharshini114" style="color: #008fb3;" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 20px; height: 20px; vertical-align: middle;"> GitHub
+</a><br>
+<a href="https://lnkd.in/gkcj6x4M" style="color: #008fb3;" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111505.png" alt="Medium" style="width: 20px; height: 20px; vertical-align: middle;"> Medium
+</a><br>
+<a href="mailto:priyadharshinikalidassk@gmail.com" style="color: #008fb3;" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 20px; height: 20px; vertical-align: middle;"> Email
+</a> -->
+
+        </ul>
+        </div>
+      </div>
+        </div>
+        
+    </div>
+        </div>
+            
+        <div id="experience" class="section fade-in">
+            <h1 style="color: #003300;">Experience</h1>
+            <div class="experience-item">
+                <h2>Tata Elxsi</h2>
+                <p><strong>Associate Machine learning Engineer</strong> (Full-time)<br>
+                Sep 2022 - Present  <br>
+                Trivandrum, Kerala, India · On-site</p>
+            </div>
+            <div class="experience-item">
+                <h2>Tata Elxsi</h2>
+                <!-- <h3>Internship</h3> -->
+                <p><strong>Computer Vision Trainee</strong><br>
+                Jan 2022 - Aug 2022 · 8 mos<br>
+                Bengaluru, Karnataka, India · Remote</p>
+            </div>
+            <div class="experience-item">
+                <h2>The Sparks Foundation</h2>
+                <h3>Internship</h3>
+                <p><strong>Web Developer Intern</strong><br>
+                Aug 2021 - Sep 2021 · 2 mos<br>
+                Remote</p>
+            </div>
+        </div>
+        <div id="projects" class="section fade-in">
+            <h1>Projects</h1>
+            
+            <div class="project-item" style="display: flex; align-items: flex-start;">
+                <video src="Post_estimation.mp4" alt="Bicep Curl Counter Demo" style="width: 400px; height: 200px; object-fit: cover; margin-right: 20px;" controls></video>
+                <div>
+                    <h2>Pose Estimate: Real-time Bicep Curl Counter (2024)</h2>
+                    <p><strong>Overview:</strong> 🏋️‍♂️Excited about leveraging cutting-edge AI? Check out my latest project: Real-time Bicep Curl Counter! 🚀 Using OpenCV and MediaPipe, I developed a Python script that accurately tracks and analyzes bicep curl movements in real-time videos. Perfect for fitness enthusiasts, coaches, and trainers, this tool provides instant feedback on form and repetition count. Let's revolutionize the way we monitor workouts and optimize performance!</p>
+                    <p><strong>Skills used:</strong> OpenCV | Mediapipe | NumPy | Video Stream Processing | Landmark Data Extraction | Joint Angle Calculation | Pose Estimation | Real-Time | Video Analysis</p>
+                    <a href="https://github.com/priyadharshini114/PoseEstimate-Real-time-Bicep-Curl-Counter-" target="_blank" style="color: #008fb3;">GitHub Repository</a>
+                </div>
+            </div>
+            
+            <div class="project-item" style="display: flex; align-items: flex-start;">
+                <video src="object_counting_output.mp4" alt="Traffic Object Tracking Demo" style="width: 400px; height: 200px; object-fit: cover; margin-right: 20px;" controls></video>
+                <div>
+                    <h2>Traffic Object Tracking and Counting (2024)</h2>
+                    <p><strong>Overview:</strong> Implemented a real-time traffic monitoring solution using the Ultralytics YOLOv8 model and OpenCV. The project tracks and counts objects across four defined regions in a video, enhancing traffic analysis and management capabilities. 🚦📊</p>
+                    <p><strong>Skills used:</strong> Python | Computer Vision | Ultralytics | Object Tracking | Object Counting</p>
+                    <a href="https://github.com/priyadharshini114/Vehicle_counting.git" target="_blank" style="color: #008fb3;">GitHub Repository</a>
+                </div>
+            </div>
+            
+            <div class="project-item" style="display: flex; align-items: flex-start;">
+                <video src="violance_output.mp4" alt="Violence Detection Demo" style="width: 400px; height: 200px; object-fit: cover; margin-right: 20px;" controls></video>
+                <div>
+                    <h2>Violence Detection (2023)</h2>
+                    <p><strong>Overview:</strong> Proficient Computer Vision Engineer adept at seamlessly integrating advanced technologies to enhance the accuracy and efficiency of action classification in video content. Skillfully combines methodologies such as Slow Fast and YOLOv5 to achieve precise action detection in real-time, even within dynamic environments. Demonstrated ability to leverage this synergistic integration for diverse applications including surveillance, sports analysis, and human-computer interaction.</p>
+                    <p><strong>Skills used:</strong> Matplotlib | SlowFast | YOLOv5 | OpenCV | NumPy</p>
+                    <!-- <a href="https://github.com/priyadharshini114/project3-link" target="_blank" style="color: #008fb3;">GitHub Repository</a> -->
+                </div>
+            </div>
+            
+            <div class="project-item" style="display: flex; align-items: flex-start;">
+                <video src="accident_output.mp4" alt="Accident Detection Demo" style="width: 700px; height: 200px; object-fit: cover; margin-right: 20px;" controls></video>
+                <div>
+                    <h2>Accident Detection (2023)</h2>
+                    <p><strong>Overview:</strong> Implemented an accident detection system that uses computer vision and machine learning techniques to quickly identify various accident scenarios on roads, utilizing the Faster R-CNN architecture to monitor and classify incidents in real-time accurately.</p>
+                    <p><strong>Skills used:</strong> OpenCV | Machine Learning | Faster R-CNN | SSD</p>
+                    <!-- <a href="https://github.com/priyadharshini114/project4-link" target="_blank" style="color: #008fb3;">GitHub Repository</a> -->
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        <div id="contact" class="section fade-in">
+            <div class="contact-form">
+                <form action="mailto:priyadharshinikalidassk@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="url" name="linkedin" placeholder="Your LinkedIn Profile (optional)">
+                    <textarea name="message" rows="4" placeholder="Your Message (reason for contacting)" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            
+    <!-- Add space and style the Download Resume button -->
+    <div style="margin-top: 20px;">
+        <p style="color: #6c757d; font-style: italic; text-align: right;">
+        <a href="Priyadharshini_29_12_2001.pdf" download="Resume_Priyadharshini_Kalidass">
+            <button type="button" style="background-color: #8c8c8c; border: none; padding: 10px 20px; cursor: pointer;">
+                Download Resume
+            </button>
+        </p>
+        </a>
+    </div>
+</div>
+
+
+    <script>
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.getElementById(this.getAttribute('data-section')).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
